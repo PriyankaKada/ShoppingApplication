@@ -36,9 +36,9 @@ public class CityManager {
     }
 
     public void addToCart(City city) {
-        if (!cartCities.contains(city)) {
+//        if (!cartCities.contains(city)) {
             cartCities.add(city);
-        }
+//        }
     }
 
     public void removeFromCart(City city) {

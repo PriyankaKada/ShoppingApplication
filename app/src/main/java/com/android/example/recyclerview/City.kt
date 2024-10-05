@@ -9,6 +9,7 @@ package com.android.example.recyclerview
 data class City(var listImage:Int,
                 var detailImage:Int,
                 var name:String,
+                var price:Int,
                 var touristNumber:String,
-                    var places:String,
+                var places:String,
                 var description:String)
