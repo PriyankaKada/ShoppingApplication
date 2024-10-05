@@ -36,9 +36,17 @@ public class FoodItemManager {
     }
 
     public void addToCart(FoodItem foodItem) {
-//        if (!cartCities.contains(FoodItem)) {
+        if (!cartCities.contains(foodItem)) {
             cartCities.add(foodItem);
-//        }
+        }else {
+            cartCities.remove(foodItem);
+            cartCities.add(
+                    new FoodItem(foodItem.getListImage(),
+                            foodItem.getName(),
+                            foodItem.getPrice(),
+                            foodItem.getQuantity()+1,
+                            foodItem.getDescription()));
+        }
     }
     public void removeAllFromCart() {
         cartCities.clear();

@@ -7,7 +7,7 @@ package com.android.example.recyclerview
 // The entity with default constructor
 
 data class FoodItem(var listImage:Int,
-                    var detailImage:Int,
                     var name:String,
                     var price:Int,
+                    var quantity: Int,
                     var description:String)

@@ -77,7 +77,7 @@ public class DetailFragment extends Fragment {
         FoodItem foodItem = (position != null) ? foodItemModel.getFoodItems().get(position) : null;
 
         if (foodItem != null) {
-            binding.imageDetail.setImageResource(foodItem.getDetailImage());
+            binding.imageDetail.setImageResource(foodItem.getListImage());
             binding.nameDetail.setText(foodItem.getName());
             binding.description.setText(foodItem.getDescription());
         }

@@ -18,4 +18,5 @@
     <string name="go_to_cart">Go to Cart</string>
     <string name="get_location">Get Location</string>
     <string name="hello_joe">Hello Joe</string>
+    <string name="delete">Delete</string>
 </resources>

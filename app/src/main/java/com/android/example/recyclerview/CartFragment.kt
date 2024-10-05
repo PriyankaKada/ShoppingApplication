@@ -36,19 +36,17 @@ class CartFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         val cartCities = FoodItemManager.getInstance().getCartCities()
-        val cartItems = cartCities.map { CartItem(it, 1) }.toMutableList()
+//        val cartItems = cartCities.map { CartItem(it, 1) }.toMutableList()
 
         // Set the checkout button and empty cart message visibility based on cart items
-        if (cartItems.isEmpty()) {
+        if (cartCities.isEmpty()) {
             checkout.visibility = View.GONE
-//            emptyCartTextView.visibility = View.VISIBLE // Show empty cart message
         } else {
             checkout.visibility = View.VISIBLE
-//            emptyCartTextView.visibility = View.GONE // Hide empty cart message
         }
 
 
-        cartAdapter = CartAdapter(cartItems) { totalPrice ->
+        cartAdapter = CartAdapter(cartCities) { totalPrice ->
             updateTotalPrice(totalPrice)
         }
         recyclerView.adapter = cartAdapter
@@ -58,16 +56,16 @@ class CartFragment : Fragment() {
 
         // Checkout button click listener
         checkout.setOnClickListener {
-            showCheckoutDialog(cartItems)
+            showCheckoutDialog(cartCities)
         }
     }
 
     @SuppressLint("SetTextI18n")
     private fun updateTotalPrice(totalPrice: Int) {
-        totalPriceTextView.text = "$totalPrice"
+        totalPriceTextView.text = "Total Amount: $totalPrice"
     }
 
-    private fun showCheckoutDialog(cartItems: List<CartItem>) {
+    private fun showCheckoutDialog(cartItems: List<FoodItem>) {
         val dialogBuilder = AlertDialog.Builder(requireContext())
         dialogBuilder.setTitle("Order Confirmation")
         dialogBuilder.setMessage("Order placed successfully!")
