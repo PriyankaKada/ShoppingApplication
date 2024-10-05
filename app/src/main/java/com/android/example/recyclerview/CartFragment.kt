@@ -1,6 +1,7 @@
 package com.android.example.recyclerview
 
 import android.annotation.SuppressLint
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,11 +30,23 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         totalPriceTextView = view.findViewById(R.id.textViewTotalPrice)
+       val  checkout=view.findViewById<Button>(R.id.buttonCheckout)
+       val  emptyCartTextView=view.findViewById<TextView>(R.id.textViewEmptyCart)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewCart)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         val cartCities = CityManager.getInstance().getCartCities()
         val cartItems = cartCities.map { CartItem(it, 1) }.toMutableList()
+
+        // Set the checkout button and empty cart message visibility based on cart items
+        if (cartItems.isEmpty()) {
+            checkout.visibility = View.GONE
+//            emptyCartTextView.visibility = View.VISIBLE // Show empty cart message
+        } else {
+            checkout.visibility = View.VISIBLE
+//            emptyCartTextView.visibility = View.GONE // Hide empty cart message
+        }
+
 
         cartAdapter = CartAdapter(cartItems) { totalPrice ->
             updateTotalPrice(totalPrice)
@@ -44,7 +57,7 @@ class CartFragment : Fragment() {
         updateTotalPrice(cartAdapter.getTotalPrice())
 
         // Checkout button click listener
-        view.findViewById<Button>(R.id.buttonCheckout).setOnClickListener {
+        checkout.setOnClickListener {
             showCheckoutDialog(cartItems)
         }
     }
