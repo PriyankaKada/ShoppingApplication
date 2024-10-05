@@ -44,5 +44,9 @@
     <fragment
             android:id="@+id/cartFragment"
             android:name="com.android.example.recyclerview.CartFragment"
-            android:label="Cart" />
+            android:label="Cart" >
+        <action
+                android:id="@+id/action_cartFragment_to_mainFragment"
+                app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

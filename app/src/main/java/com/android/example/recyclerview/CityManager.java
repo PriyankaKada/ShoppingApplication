@@ -40,6 +40,9 @@ public class CityManager {
             cartCities.add(city);
 //        }
     }
+    public void removeAllFromCart() {
+        cartCities.clear();
+    }
 
     public void removeFromCart(City city) {
         cartCities.remove(city);
