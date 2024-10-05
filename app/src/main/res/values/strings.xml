@@ -12,4 +12,10 @@
     <string name="search_food_items">Search Food Items</string>
     <string name="search_food_item">Search Food Item..</string>
     <string name="item_name">Item Name</string>
+    <string name="add_to_favorite">Add to Favorite</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="go_to_favorites">Go to Favorites</string>
+    <string name="go_to_cart">Go to Cart</string>
+    <string name="get_location">Get Location</string>
+    <string name="hello_joe">Hello Joe</string>
 </resources>
