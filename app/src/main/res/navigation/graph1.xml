@@ -6,7 +6,7 @@
     <fragment
             android:id="@+id/mainFragment"
             android:name="com.android.example.recyclerview.MainFragment"
-            android:label="Cities">
+            android:label="Food Items List">
         <action
                 android:id="@+id/action_mainFragment_to_detailFragment"
                 app:destination="@id/detailFragment" />
@@ -34,12 +34,12 @@
     <fragment
             android:id="@+id/detailFragment"
             android:name="com.android.example.recyclerview.DetailFragment"
-            android:label="Details" />
+            android:label="Food Item Details" />
 
     <fragment
             android:id="@+id/favoritesFragment"
             android:name="com.android.example.recyclerview.FavoritesFragment"
-            android:label="Favorites" />
+            android:label="Favorite Food Items" />
 
     <fragment
             android:id="@+id/cartFragment"

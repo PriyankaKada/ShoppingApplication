@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         // Optionally set a title if needed
         if (supportActionBar != null) {
-            supportActionBar!!.setTitle("Cities")
+            supportActionBar?.title = "Food Items List"
         }
 
     }

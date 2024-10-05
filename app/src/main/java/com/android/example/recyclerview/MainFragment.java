@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.android.example.recyclerview.databinding.FragmentMainBinding;
 
+
 public class MainFragment extends Fragment {
 
     private FragmentMainBinding binding;

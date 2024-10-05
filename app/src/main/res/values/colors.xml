@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#A9A9A9</color>
+    <color name="colorPrimaryDark">#A9A9A9</color>
     <color name="colorAccent">#D81B60</color>
+    <!-- Gray color scheme -->
+    <color name="grayLight">#F5F5F5</color>   <!-- Light gray for backgrounds -->
+    <color name="grayMedium">#E0E0E0</color>  <!-- Medium gray for elements like EditText -->
+    <color name="grayDark">#B0BEC5</color>    <!-- Dark gray for contrast -->
+
 </resources>
