@@ -12,14 +12,14 @@
             android:gravity="center_vertical">
 
         <ImageView
-                android:id="@+id/imageViewCity"
+                android:id="@+id/imageViewFoodItem"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginEnd="16dp"
                 android:scaleType="centerCrop" />
 
         <TextView
-                android:id="@+id/textViewCityName"
+                android:id="@+id/textViewFoodItemName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

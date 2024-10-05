@@ -28,17 +28,6 @@ class MainActivity : AppCompatActivity() {
         if (supportActionBar != null) {
             supportActionBar!!.setTitle("Cities")
         }
-//        // Set click listener for Favorites button
-//        buttonFavorites.setOnClickListener {
-////            hideButtons()
-//            navController.navigate(R.id.action_mainFragment_to_favoritesFragment)
-//        }
-//
-//        // Set click listener for Cart button
-//        buttonCart.setOnClickListener {
-////            hideButtons()
-//            navController.navigate(R.id.action_mainFragment_to_cartFragment)
-//        }
 
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

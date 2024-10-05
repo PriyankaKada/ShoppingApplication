@@ -6,7 +6,7 @@
         android:padding="8dp">
 
     <ImageView
-            android:id="@+id/imageViewCity"
+            android:id="@+id/imageViewFoodItem"
             android:layout_width="48dp"
             android:layout_height="48dp"
             />
@@ -19,14 +19,14 @@
             android:paddingStart="8dp">
 
         <TextView
-                android:id="@+id/textViewCityName"
+                android:id="@+id/textViewFoodItemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
         <TextView
-                android:id="@+id/textViewCityInfo"
+                android:id="@+id/textViewFoodItemInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp" />

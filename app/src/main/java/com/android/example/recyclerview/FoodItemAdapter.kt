@@ -6,27 +6,27 @@ import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.android.example.recyclerview.databinding.CityLayoutBinding
+import com.android.example.recyclerview.databinding.FoodItemLayoutBinding
 
-class CityAdapter(
+class FoodItemAdapter(
     private val context: Context,
-    private var cities: List<City>
-) : RecyclerView.Adapter<CityAdapter.ViewHolder>() {
+    private var cities: List<FoodItem>
+) : RecyclerView.Adapter<FoodItemAdapter.ViewHolder>() {
 
-    private val citiesFull: List<City> = ArrayList(cities) // Copy for filtering
+    private val citiesFull: List<FoodItem> = ArrayList(cities) // Copy for filtering
 
     @NonNull
     override fun onCreateViewHolder(@NonNull parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = CityLayoutBinding.inflate(LayoutInflater.from(context), parent, false)
+        val binding = FoodItemLayoutBinding.inflate(LayoutInflater.from(context), parent, false)
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(@NonNull holder: ViewHolder, position: Int) {
-        val city = cities[position]
+        val FoodItem = cities[position]
         holder.binding.apply {
-            listimage.setImageResource(city.listImage)
-            name.text = city.name
-//            numbertourist.text = "${city.touristNumber}${context.getString(R.string.touristText)}"
+            listimage.setImageResource(FoodItem.listImage)
+            name.text = FoodItem.name
+//            numbertourist.text = "${FoodItem.touristNumber}${context.getString(R.string.touristText)}"
         }
 
         holder.itemView.setOnClickListener { view ->
@@ -47,12 +47,12 @@ class CityAdapter(
             citiesFull // Show all
         } else {
             val filterPattern = text.lowercase().trim()
-            citiesFull.filter { city ->
-                city.name.lowercase().contains(filterPattern)
+            citiesFull.filter { FoodItem ->
+                FoodItem.name.lowercase().contains(filterPattern)
             }
         }
         notifyDataSetChanged()
     }
 
-    class ViewHolder(val binding: CityLayoutBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: FoodItemLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 }

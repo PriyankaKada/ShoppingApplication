@@ -19,7 +19,7 @@ import com.android.example.recyclerview.databinding.FragmentMainBinding;
 public class MainFragment extends Fragment {
 
     private FragmentMainBinding binding;
-    private CityModel cityModel;
+    private FoodItemModel FoodItemModel;
 
     @Nullable
     @Override
@@ -32,10 +32,10 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        cityModel = new ViewModelProvider(requireActivity()).get(CityModel.class);
+        FoodItemModel = new ViewModelProvider(requireActivity()).get(FoodItemModel.class);
 
         int numberOfColumns = getResources().getInteger(R.integer.nbcol);
-        CityAdapter adapter = new CityAdapter(requireActivity(), cityModel.getCities());
+        FoodItemAdapter adapter = new FoodItemAdapter(requireActivity(), FoodItemModel.getFoodItems());
         binding.recyclerView.setLayoutManager(new GridLayoutManager(requireActivity(), numberOfColumns));
         binding.recyclerView.setAdapter(adapter);
 

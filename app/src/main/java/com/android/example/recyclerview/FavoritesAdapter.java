@@ -13,47 +13,47 @@ import java.util.List;
 
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> {
 
-    private List<City> favoriteCities;
+    private final List<FoodItem> favoriteFoodItems;
 
-    public FavoritesAdapter(List<City> favoriteCities) {
-        this.favoriteCities = favoriteCities;
+    public FavoritesAdapter(List<FoodItem> favoriteFoodItems) {
+        this.favoriteFoodItems = favoriteFoodItems;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_favourite_city, parent, false);
+                .inflate(R.layout.item_favourite_food_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        City city = favoriteCities.get(position);
-        holder.bind(city);
+        FoodItem foodItem = favoriteFoodItems.get(position);
+        holder.bind(foodItem);
     }
 
     @Override
     public int getItemCount() {
-        return favoriteCities.size();
+        return favoriteFoodItems.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imageViewCity;
-        private TextView textViewCityName;
-        private TextView textViewCityInfo;
+        private final ImageView imageViewFoodItem;
+        private final TextView textViewFoodItemName;
+        private final TextView textViewFoodItemInfo;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageViewCity = itemView.findViewById(R.id.imageViewCity);
-            textViewCityName = itemView.findViewById(R.id.textViewCityName);
-            textViewCityInfo = itemView.findViewById(R.id.textViewCityInfo);
+            imageViewFoodItem = itemView.findViewById(R.id.imageViewFoodItem);
+            textViewFoodItemName = itemView.findViewById(R.id.textViewFoodItemName);
+            textViewFoodItemInfo = itemView.findViewById(R.id.textViewFoodItemInfo);
         }
 
-        public void bind(City city) {
-            textViewCityName.setText(city.getName());
-            textViewCityInfo.setText(city.getDescription());
-             imageViewCity.setImageResource(city.getListImage());
+        public void bind(FoodItem foodItem) {
+            textViewFoodItemName.setText(foodItem.getName());
+            textViewFoodItemInfo.setText(foodItem.getDescription());
+             imageViewFoodItem.setImageResource(foodItem.getListImage());
         }
     }
 }

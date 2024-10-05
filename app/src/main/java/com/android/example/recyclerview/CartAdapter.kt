@@ -15,18 +15,18 @@ class CartAdapter(
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val cityName: TextView = itemView.findViewById(R.id.textViewCityName)
-        private val cityImage: ImageView = itemView.findViewById(R.id.imageViewCity)
+        private val FoodItemName: TextView = itemView.findViewById(R.id.textViewFoodItemName)
+        private val FoodItemImage: ImageView = itemView.findViewById(R.id.imageViewFoodItem)
         private val quantityText: TextView = itemView.findViewById(R.id.textViewQuantity)
         private val priceText: TextView = itemView.findViewById(R.id.textViewPrice)
 
         @SuppressLint("SetTextI18n")
         fun bind(cartItem: CartItem) {
-            // Bind city data
-            cityName.text = cartItem.city.name
-            cityImage.setImageResource(cartItem.city.detailImage)
+            // Bind FoodItem data
+            FoodItemName.text = cartItem.foodItem.name
+            FoodItemImage.setImageResource(cartItem.foodItem.detailImage)
             quantityText.text = cartItem.quantity.toString()
-            priceText.text = "${cartItem.city.price} * ${cartItem.quantity}"
+            priceText.text = "${cartItem.foodItem.price} * ${cartItem.quantity}"
 
             // Increase quantity
             itemView.findViewById<Button>(R.id.buttonIncrease).setOnClickListener {
@@ -58,6 +58,6 @@ class CartAdapter(
     override fun getItemCount(): Int = items.size
 
     fun getTotalPrice(): Int {
-        return items.sumOf { it.city.price * it.quantity }
+        return items.sumOf { it.foodItem.price * it.quantity }
     }
 }

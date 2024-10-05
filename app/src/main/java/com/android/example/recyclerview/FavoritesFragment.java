@@ -26,7 +26,7 @@ public class FavoritesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewFavorites);
-        List<City> favoriteCities = CityManager.getInstance().getFavoriteCities();
+        List<FoodItem> favoriteCities = FoodItemManager.getInstance().getFavoriteCities();
         FavoritesAdapter adapter = new FavoritesAdapter(favoriteCities);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);

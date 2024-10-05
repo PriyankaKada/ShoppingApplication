@@ -16,7 +16,7 @@ import com.android.example.recyclerview.databinding.FragmentDetailBinding;
 public class DetailFragment extends Fragment {
 
     private FragmentDetailBinding binding;
-    private CityModel cityModel;
+    private FoodItemModel FoodItemModel;
 
     @Nullable
     @Override
@@ -30,39 +30,39 @@ public class DetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        cityModel = new ViewModelProvider(requireActivity()).get(CityModel.class);
+        FoodItemModel = new ViewModelProvider(requireActivity()).get(FoodItemModel.class);
 
         Integer position = getArguments() != null ? getArguments().getInt("position") : null;
-        City city;
+        FoodItem foodItem;
 
         if (position != null) {
-             city = cityModel.getCities().get(position);
-            binding.imageDetail.setImageResource(city.getDetailImage());
-            binding.nameDetail.setText(city.getName());
-//            binding.numbertouristDetail.setText(city.getTouristNumber() + getString(R.string.touristText));
-            binding.description.setText(city.getDescription());
-//            binding.places.setText(getString(R.string.places) + city.getPlaces());
+             foodItem = FoodItemModel.getFoodItems().get(position);
+            binding.imageDetail.setImageResource(foodItem.getDetailImage());
+            binding.nameDetail.setText(foodItem.getName());
+//            binding.numbertouristDetail.setText(FoodItem.getTouristNumber() + getString(R.string.touristText));
+            binding.description.setText(foodItem.getDescription());
+//            binding.places.setText(getString(R.string.places) + FoodItem.getPlaces());
         } else {
-            city = null;
+            foodItem = null;
         }
 
         // Set up button click listeners
         binding.buttonAddToCart.setOnClickListener(v -> {
-            CityManager.getInstance().addToCart(city);
+            FoodItemManager.getInstance().addToCart(foodItem);
             // Optionally show a message to the user
         });
 
         binding.buttonAddToFavorite.setOnClickListener(v -> {
-            CityManager.getInstance().addToFavorites(city);
+            FoodItemManager.getInstance().addToFavorites(foodItem);
             // Optionally show a message to the user
         });
     }
 
-    private void addToCart(City city) {
-        // Implement your logic to add the city to the cart
+    private void addToCart(FoodItem foodItem) {
+        // Implement your logic to add the FoodItem to the cart
     }
 
-    private void addToFavorite(City city) {
-        // Implement your logic to add the city to favorites
+    private void addToFavorite(FoodItem foodItem) {
+        // Implement your logic to add the FoodItem to favorites
     }
 }

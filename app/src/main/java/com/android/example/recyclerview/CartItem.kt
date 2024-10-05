@@ -1,7 +1,7 @@
 package com.android.example.recyclerview
 
 data class CartItem(
-    val city: City,
+    val foodItem: FoodItem,
     var quantity: Int,
 
-)
+    )
