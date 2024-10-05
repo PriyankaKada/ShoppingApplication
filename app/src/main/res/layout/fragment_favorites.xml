@@ -4,15 +4,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Favorite Cities"
-            android:textSize="24sp"
-            android:padding="16dp" />
-
-    <ListView
-            android:id="@+id/listViewFavorites"
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFavorites"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 </LinearLayout>
