@@ -26,7 +26,7 @@ class CityAdapter(
         holder.binding.apply {
             listimage.setImageResource(city.listImage)
             name.text = city.name
-            numbertourist.text = "${city.touristNumber}${context.getString(R.string.touristText)}"
+//            numbertourist.text = "${city.touristNumber}${context.getString(R.string.touristText)}"
         }
 
         holder.itemView.setOnClickListener { view ->

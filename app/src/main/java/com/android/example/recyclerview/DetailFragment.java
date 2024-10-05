@@ -39,9 +39,9 @@ public class DetailFragment extends Fragment {
              city = cityModel.getCities().get(position);
             binding.imageDetail.setImageResource(city.getDetailImage());
             binding.nameDetail.setText(city.getName());
-            binding.numbertouristDetail.setText(city.getTouristNumber() + getString(R.string.touristText));
+//            binding.numbertouristDetail.setText(city.getTouristNumber() + getString(R.string.touristText));
             binding.description.setText(city.getDescription());
-            binding.places.setText(getString(R.string.places) + city.getPlaces());
+//            binding.places.setText(getString(R.string.places) + city.getPlaces());
         } else {
             city = null;
         }
