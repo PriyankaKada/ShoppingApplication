@@ -21,12 +21,13 @@ class FoodItemAdapter(
         return ViewHolder(binding)
     }
 
+
     override fun onBindViewHolder(@NonNull holder: ViewHolder, position: Int) {
-        val FoodItem = cities[position]
+        val foodItem = cities[position]
         holder.binding.apply {
-            listimage.setImageResource(FoodItem.listImage)
-            name.text = FoodItem.name
-//            numbertourist.text = "${FoodItem.touristNumber}${context.getString(R.string.touristText)}"
+            listimage.setImageResource(foodItem.listImage)
+            name.text = foodItem.name
+           price.text = foodItem.price.toString()
         }
 
         holder.itemView.setOnClickListener { view ->
