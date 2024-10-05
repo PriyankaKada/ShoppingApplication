@@ -2,19 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F9F9F9">
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewCart"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp" />
 
     <TextView
             android:id="@+id/textViewTotalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/total_0_00"
+            android:textSize="18sp"
+            android:textColor="#333333"
             android:layout_gravity="end"
             android:padding="16dp" />
 
@@ -23,15 +29,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cart_is_empty"
-            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="#888888"
+            android:layout_gravity="center"
             android:gravity="center"
             android:visibility="gone"
-    android:padding="16dp" />
+            android:padding="16dp" />
 
     <Button
             android:id="@+id/buttonCheckout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/checkout"
-            android:padding="16dp" />
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/colorAccent"
+            android:padding="16dp"
+            android:layout_marginTop="16dp" />
 </LinearLayout>

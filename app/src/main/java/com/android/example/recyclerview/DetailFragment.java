@@ -39,9 +39,7 @@ public class DetailFragment extends Fragment {
              foodItem = FoodItemModel.getFoodItems().get(position);
             binding.imageDetail.setImageResource(foodItem.getDetailImage());
             binding.nameDetail.setText(foodItem.getName());
-//            binding.numbertouristDetail.setText(FoodItem.getTouristNumber() + getString(R.string.touristText));
             binding.description.setText(foodItem.getDescription());
-//            binding.places.setText(getString(R.string.places) + FoodItem.getPlaces());
         } else {
             foodItem = null;
         }

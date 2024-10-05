@@ -27,6 +27,7 @@ class FoodItemAdapter(
         holder.binding.apply {
             listimage.setImageResource(foodItem.listImage)
             name.text = foodItem.name
+            description.text = foodItem.description
            price.text = foodItem.price.toString()
         }
 

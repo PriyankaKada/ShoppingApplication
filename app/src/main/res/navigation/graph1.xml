@@ -12,17 +12,14 @@
                 app:destination="@id/detailFragment" />
         <action android:id="@+id/action_mainFragment_to_profileFragment"
                 app:destination="@id/profileFragment" />
-        <action
-                android:id="@+id/action_mainFragment_to_favoritesFragment"
-                app:destination="@id/favoritesFragment" />
-        <action
-                android:id="@+id/action_mainFragment_to_cartFragment"
-                app:destination="@id/cartFragment" />
     </fragment>
     <fragment
             android:id="@+id/profileFragment"
             android:name="com.android.example.recyclerview.ProfileFragment"
             android:label="Profile" >
+        <action android:id="@+id/action_mainFragment_to_profileFragment"
+                app:destination="@id/profileFragment" />
+
         <action
                 android:id="@+id/action_profileFragment_to_favoritesFragment"
                 app:destination="@id/favoritesFragment" />
@@ -34,17 +31,27 @@
     <fragment
             android:id="@+id/detailFragment"
             android:name="com.android.example.recyclerview.DetailFragment"
-            android:label="Food Item Details" />
+            android:label="Food Item Details" >
+        <action android:id="@+id/action_mainFragment_to_profileFragment"
+                app:destination="@id/profileFragment" />
+    </fragment>
 
     <fragment
             android:id="@+id/favoritesFragment"
             android:name="com.android.example.recyclerview.FavoritesFragment"
-            android:label="Favorite Food Items" />
+            android:label="Favorite Food Items" >
+        <action android:id="@+id/action_mainFragment_to_profileFragment"
+                app:destination="@id/profileFragment" />
+
+    </fragment>
 
     <fragment
             android:id="@+id/cartFragment"
             android:name="com.android.example.recyclerview.CartFragment"
             android:label="Cart" >
+        <action android:id="@+id/action_mainFragment_to_profileFragment"
+                app:destination="@id/profileFragment" />
+
         <action
                 android:id="@+id/action_cartFragment_to_mainFragment"
                 app:destination="@id/mainFragment" />
