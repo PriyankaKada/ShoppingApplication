@@ -13,14 +13,11 @@ class FoodItemAdapter(
     private var cities: List<FoodItem>
 ) : RecyclerView.Adapter<FoodItemAdapter.ViewHolder>() {
 
-    private val citiesFull: List<FoodItem> = ArrayList(cities) // Copy for filtering
-
     @NonNull
     override fun onCreateViewHolder(@NonNull parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FoodItemLayoutBinding.inflate(LayoutInflater.from(context), parent, false)
         return ViewHolder(binding)
     }
-
 
     override fun onBindViewHolder(@NonNull holder: ViewHolder, position: Int) {
         val foodItem = cities[position]
@@ -28,7 +25,7 @@ class FoodItemAdapter(
             listimage.setImageResource(foodItem.listImage)
             name.text = foodItem.name
             description.text = foodItem.description
-           price.text = foodItem.price.toString()
+            price.text = foodItem.price.toString()
         }
 
         holder.itemView.setOnClickListener { view ->
@@ -43,17 +40,9 @@ class FoodItemAdapter(
         return cities.size
     }
 
-    // Method to filter the list
-    fun filter(text: String) {
-        cities = if (text.isEmpty()) {
-            citiesFull // Show all
-        } else {
-            val filterPattern = text.lowercase().trim()
-            citiesFull.filter { FoodItem ->
-                FoodItem.name.lowercase().contains(filterPattern)
-            }
-        }
-        notifyDataSetChanged()
+    fun updateFoodItems(newFoodItems: List<FoodItem>) {
+        this.cities = newFoodItems
+        notifyDataSetChanged();
     }
 
     class ViewHolder(val binding: FoodItemLayoutBinding) : RecyclerView.ViewHolder(binding.root)

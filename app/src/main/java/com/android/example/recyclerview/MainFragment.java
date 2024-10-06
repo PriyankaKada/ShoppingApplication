@@ -16,10 +16,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.android.example.recyclerview.databinding.FragmentMainBinding;
 
+import java.util.ArrayList;
+
 public class MainFragment extends Fragment {
 
     private FragmentMainBinding binding;
-    private FoodItemModel FoodItemModel;
+    private FoodItemViewModel foodItemViewModel;
+    private FoodItemAdapter adapter;
 
     @Nullable
     @Override
@@ -32,15 +35,20 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        FoodItemModel = new ViewModelProvider(requireActivity()).get(FoodItemModel.class);
+        foodItemViewModel = new ViewModelProvider(requireActivity()).get(FoodItemViewModel.class);
 
         int numberOfColumns = getResources().getInteger(R.integer.nbcol);
-        FoodItemAdapter adapter = new FoodItemAdapter(requireActivity(), FoodItemModel.getFoodItems());
+        adapter = new FoodItemAdapter(requireActivity(), new ArrayList<>());
         binding.recyclerView.setLayoutManager(new GridLayoutManager(requireActivity(), numberOfColumns));
         binding.recyclerView.setAdapter(adapter);
 
         DividerItemDecoration itemDecor = new DividerItemDecoration(requireActivity(), DividerItemDecoration.VERTICAL);
         binding.recyclerView.addItemDecoration(itemDecor);
+
+        // Observe the LiveData
+        foodItemViewModel.getFoodItems().observe(getViewLifecycleOwner(), foodItems -> {
+            adapter.updateFoodItems(foodItems);
+        });
 
         // Set up the search functionality
         binding.searchEditText.addTextChangedListener(new TextWatcher() {
@@ -49,11 +57,12 @@ public class MainFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                adapter.filter(s.toString());
+                foodItemViewModel.filter(s.toString());
             }
 
             @Override
             public void afterTextChanged(Editable s) {}
         });
     }
+
 }
