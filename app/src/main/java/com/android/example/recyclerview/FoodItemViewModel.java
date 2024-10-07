@@ -7,6 +7,9 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**This is ViewModel Class, It is Lifecycle Aware component used to handle Business Logic
+ * of the application
+ * */
 public class FoodItemViewModel extends ViewModel {
     private final MutableLiveData<List<FoodItem>> foodItemsLiveData;
     private final List<FoodItem> foodItemsFull;
@@ -17,9 +20,16 @@ public class FoodItemViewModel extends ViewModel {
         foodItemsLiveData.setValue(new ArrayList<>(foodItemsFull));
     }
 
+    /**Immutable Live Data used to get List of Food Items
+     * Exposed outside the ViewModel, So no other element is able to update it
+     * */
+
     public LiveData<List<FoodItem>> getFoodItems() {
         return foodItemsLiveData;
     }
+
+    /**This method simulates  how data coming from API or other sources are prepared to shown on the UI
+     * */
 
     public void filter(String text) {
         if (text.isEmpty()) {
@@ -35,6 +45,9 @@ public class FoodItemViewModel extends ViewModel {
             foodItemsLiveData.setValue(filteredList);
         }
     }
+
+    /**This method is used to construct data to be displayed on the screen
+     * */
     public List<FoodItem> loadData() {
         FoodItem foodItem1 = new FoodItem(R.drawable.caesar_salad, "Caesar Salad", 30, 1,
                 "Crisp romaine lettuce, crunchy croutons, and Parmesan cheese, all tossed in a creamy Caesar dressing made with anchovies, garlic, and lemon juice. Visual Cue: Look for a bowl of bright green romaine, golden croutons, and shavings of cheese.");

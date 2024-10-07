@@ -1,6 +1,7 @@
 package com.android.example.recyclerview;
 
 import android.Manifest;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -18,10 +19,14 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.app.NotificationChannel;
-
 import com.android.example.recyclerview.databinding.FragmentDetailBinding;
 
+/** This is Detail Fragment
+ * It shows Functionality such as
+ * 1. Add To Cart
+ * 2. Add To Favourite
+ * 3. Shown Notification when Item is Added to the cart
+ * */
 public class DetailFragment extends Fragment {
 
     private FragmentDetailBinding binding;
@@ -84,6 +89,7 @@ public class DetailFragment extends Fragment {
 
         binding.buttonAddToCart.setOnClickListener(v -> {
             if (foodItem != null) {
+
                 FoodItemManager.getInstance().addToCart(foodItem);
                 sendNotification(foodItem.getName() + " has been added to your cart!");
             }

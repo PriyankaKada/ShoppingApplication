@@ -8,7 +8,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
-
+/**This is Entry point to the Application
+ * Application is architect as Single Activity Application */
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,10 +31,17 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    /**This Method is used to create Menu Items
+     *
+     *
+     * */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
+    /**This method is used to handle click event of Menu Items
+     *
+     * */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_icon1 -> {
@@ -48,6 +56,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    /**This method initializes Nav Graph in the Application
+     *
+     * */
     override fun onSupportNavigateUp() = navController.navigateUp() || super.onSupportNavigateUp()
 
 }

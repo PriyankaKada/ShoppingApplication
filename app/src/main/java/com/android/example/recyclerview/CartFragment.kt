@@ -1,7 +1,6 @@
 package com.android.example.recyclerview
 
 import android.annotation.SuppressLint
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +13,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+/**This Fragment is used to depict Cart Functionality
+ * This Fragment Handles Actions like
+ *  1. Increase Quantity
+ *  2. Decrease Quantity
+ *  3. Checkout Process
+ *  4. Add the Price*Quantity
+ * */
 class CartFragment : Fragment() {
 
     private lateinit var cartAdapter: CartAdapter
@@ -36,7 +42,6 @@ class CartFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         val cartCities = FoodItemManager.getInstance().cartFoodItems
-//        val cartItems = cartCities.map { CartItem(it, 1) }.toMutableList()
 
         // Set the checkout button and empty cart message visibility based on cart items
         if (cartCities.isEmpty()) {
