@@ -1,4 +1,4 @@
-package com.android.example.recyclerview
+package com.kioskapp.ryan
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.android.example.recyclerview.R
 import com.android.example.recyclerview.databinding.FoodItemLayoutBinding
 
 class FoodItemAdapter(

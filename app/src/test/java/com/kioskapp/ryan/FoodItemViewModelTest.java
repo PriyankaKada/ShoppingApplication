@@ -1,4 +1,8 @@
-package com.android.example.recyclerview;
+package com.kioskapp.ryan;
+
+import com.android.example.recyclerview.R;
+import com.kioskapp.ryan.FoodItem;
+import com.kioskapp.ryan.FoodItemManager;
 
 import junit.framework.TestCase;
 

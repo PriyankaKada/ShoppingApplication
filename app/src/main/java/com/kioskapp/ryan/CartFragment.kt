@@ -1,4 +1,4 @@
-package com.android.example.recyclerview
+package com.kioskapp.ryan
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.example.recyclerview.R
 
 /**This Fragment is used to depict Cart Functionality
  * This Fragment Handles Actions like

@@ -1,4 +1,4 @@
-package com.android.example.recyclerview
+package com.kioskapp.ryan
 
 import android.os.Bundle
 import android.view.Menu
@@ -8,6 +8,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.android.example.recyclerview.R
+
 /**This is Entry point to the Application
  * Application is architect as Single Activity Application */
 

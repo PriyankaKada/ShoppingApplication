@@ -1,11 +1,5 @@
 <resources>
-    <string name="app_name">Recycler View</string>
-
-    <string name="touristText">&#160;de touristes par an</string>
-
-    <string name="places">Les principaux lieux touristiques.&#160;</string>
-    >
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">KioskApp_RyanB</string>
     <string name="checkout">Checkout</string>
     <string name="total_0_00">Total: $0.00</string>
     <string name="cart_is_empty">Cart is empty</string>

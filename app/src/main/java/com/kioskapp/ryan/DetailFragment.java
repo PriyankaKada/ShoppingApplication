@@ -1,4 +1,4 @@
-package com.android.example.recyclerview;
+package com.kioskapp.ryan;
 
 import android.Manifest;
 import android.app.NotificationChannel;
@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.android.example.recyclerview.R;
 import com.android.example.recyclerview.databinding.FragmentDetailBinding;
 
 /** This is Detail Fragment

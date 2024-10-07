@@ -1,4 +1,4 @@
-package com.android.example.recyclerview;
+package com.kioskapp.ryan;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.example.recyclerview.R;
 
 import java.util.List;
 /**This fragment is used for Displaying FavoritesFood items selected by the user

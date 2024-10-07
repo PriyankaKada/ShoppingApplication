@@ -1,4 +1,4 @@
-package com.android.example.recyclerview;
+package com.kioskapp.ryan;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.android.example.recyclerview.R;
 import com.android.example.recyclerview.databinding.FragmentMainBinding;
 
 import java.util.ArrayList;

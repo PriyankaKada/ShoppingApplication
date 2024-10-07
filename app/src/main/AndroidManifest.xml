@@ -16,7 +16,7 @@
                 android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyBQw90_rHsrw0o5ksE-DF9y_jm9VCbVMtg" />
 
-        <activity android:name=".MainActivity" android:exported="true">
+        <activity android:name="com.kioskapp.ryan.MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

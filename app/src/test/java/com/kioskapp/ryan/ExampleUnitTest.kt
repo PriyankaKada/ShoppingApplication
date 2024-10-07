@@ -1,4 +1,4 @@
-package com.android.example.recyclerview
+package com.kioskapp.ryan
 
 import org.junit.Test
 

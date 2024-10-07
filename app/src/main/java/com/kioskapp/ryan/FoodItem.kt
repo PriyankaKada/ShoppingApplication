@@ -1,4 +1,4 @@
-package com.android.example.recyclerview
+package com.kioskapp.ryan
 
 /**
  * Created by hakim on 3/11/18.
