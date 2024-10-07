@@ -35,7 +35,7 @@ class CartFragment : Fragment() {
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewCart)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val cartCities = FoodItemManager.getInstance().getCartCities()
+        val cartCities = FoodItemManager.getInstance().cartFoodItems
 //        val cartItems = cartCities.map { CartItem(it, 1) }.toMutableList()
 
         // Set the checkout button and empty cart message visibility based on cart items

@@ -25,7 +25,7 @@ import com.android.example.recyclerview.databinding.FragmentDetailBinding;
 public class DetailFragment extends Fragment {
 
     private FragmentDetailBinding binding;
-    private FoodItemModel foodItemModel;
+    private FoodItemViewModel foodItemModel;
     private static final String CHANNEL_ID = "food_item_notifications";
     private static final int PERMISSION_REQUEST_CODE = 1;
 
@@ -71,10 +71,10 @@ public class DetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        foodItemModel = new ViewModelProvider(requireActivity()).get(FoodItemModel.class);
+        foodItemModel = new ViewModelProvider(requireActivity()).get(FoodItemViewModel.class);
 
         Integer position = getArguments() != null ? getArguments().getInt("position") : null;
-        FoodItem foodItem = (position != null) ? foodItemModel.getFoodItems().get(position) : null;
+        FoodItem foodItem = (position != null) ? foodItemModel.loadData().get(position) : null;
 
         if (foodItem != null) {
             binding.imageDetail.setImageResource(foodItem.getListImage());

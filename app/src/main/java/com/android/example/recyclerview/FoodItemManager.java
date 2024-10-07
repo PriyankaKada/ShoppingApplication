@@ -3,15 +3,18 @@ package com.android.example.recyclerview;
 import java.util.ArrayList;
 import java.util.List;
 
+/**This class is Data Manager Class for Cart
+ * and favourite Functionality
+ * */
 public class FoodItemManager {
 
     private static FoodItemManager instance;
-    private List<FoodItem> favoriteCities;
-    private List<FoodItem> cartCities;
+    private List<FoodItem> favoriteFoodItems;
+    private List<FoodItem> cartFoodItems;
 
     private FoodItemManager() {
-        favoriteCities = new ArrayList<>();
-        cartCities = new ArrayList<>();
+        favoriteFoodItems = new ArrayList<>();
+        cartFoodItems = new ArrayList<>();
     }
 
     public static FoodItemManager getInstance() {
@@ -22,25 +25,25 @@ public class FoodItemManager {
     }
 
     public void addToFavorites(FoodItem foodItem) {
-        if (!favoriteCities.contains(foodItem)) {
-            favoriteCities.add(foodItem);
+        if (!favoriteFoodItems.contains(foodItem)) {
+            favoriteFoodItems.add(foodItem);
         }
     }
 
     public void removeFromFavorites(FoodItem foodItem) {
-        favoriteCities.remove(foodItem);
+        favoriteFoodItems.remove(foodItem);
     }
 
-    public List<FoodItem> getFavoriteCities() {
-        return favoriteCities;
+    public List<FoodItem> getFavoriteFoodItems() {
+        return favoriteFoodItems;
     }
 
     public void addToCart(FoodItem foodItem) {
-        if (!cartCities.contains(foodItem)) {
-            cartCities.add(foodItem);
+        if (!cartFoodItems.contains(foodItem)) {
+            cartFoodItems.add(foodItem);
         }else {
-            cartCities.remove(foodItem);
-            cartCities.add(
+            cartFoodItems.remove(foodItem);
+            cartFoodItems.add(
                     new FoodItem(foodItem.getListImage(),
                             foodItem.getName(),
                             foodItem.getPrice(),
@@ -49,15 +52,15 @@ public class FoodItemManager {
         }
     }
     public void removeAllFromCart() {
-        cartCities.clear();
+        cartFoodItems.clear();
     }
 
     public void removeFromCart(FoodItem foodItem) {
-        cartCities.remove(foodItem);
+        cartFoodItems.remove(foodItem);
     }
 
-    public List<FoodItem> getCartCities() {
-        return cartCities;
+    public List<FoodItem> getCartFoodItems() {
+        return cartFoodItems;
     }
     public List<FoodItem> loadData() {
         FoodItem foodItem1 = new FoodItem(R.drawable.caesar_salad, "Caesar Salad", 30, 1,

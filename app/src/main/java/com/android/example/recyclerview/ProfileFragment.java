@@ -29,6 +29,8 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+/**This fragment is used for Displaying FavoritesFood,CartFunctionality and User Location
+ * */
 
 public class ProfileFragment extends Fragment implements OnMapReadyCallback {
 
@@ -72,6 +74,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback {
         buttonCart.setOnClickListener(v -> navController.navigate(R.id.action_profileFragment_to_cartFragment));
         buttonGetLocation.setOnClickListener(v -> requestCurrentLocation());
     }
+    /**This method is used to request location from the user
+     * */
 
     private void requestCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
@@ -97,7 +101,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback {
             }
         }, null);
     }
-
+    /**This method is used to update user's location on the map
+     * */
     private void updateMapLocation(Location location) {
         if (googleMap != null) {
             LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
@@ -135,6 +140,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback {
         super.onLowMemory();
         mapView.onLowMemory();
     }
+    /**This method is used to handle user's action after permission is handled by user
+     * */
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
