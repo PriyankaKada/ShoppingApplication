@@ -1,4 +1,4 @@
-package com.kioskapp.ryan;
+package com.kioskapp.ryan.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.example.recyclerview.R;
+import com.kioskapp.ryan.model.FoodItem;
 
 import java.util.List;
 

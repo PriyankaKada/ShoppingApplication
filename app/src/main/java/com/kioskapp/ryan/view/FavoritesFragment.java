@@ -1,4 +1,4 @@
-package com.kioskapp.ryan;
+package com.kioskapp.ryan.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.example.recyclerview.R;
+import com.kioskapp.ryan.model.FoodItem;
+import com.kioskapp.ryan.model.FoodItemManager;
 
 import java.util.List;
 /**This fragment is used for Displaying FavoritesFood items selected by the user

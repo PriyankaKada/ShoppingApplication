@@ -1,4 +1,4 @@
-package com.kioskapp.ryan
+package com.kioskapp.ryan.viewModel
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.recyclerview.R
 import com.android.example.recyclerview.databinding.FoodItemLayoutBinding
+import com.kioskapp.ryan.model.FoodItem
 
 class FoodItemAdapter(
     private val context: Context,

@@ -1,4 +1,4 @@
-package com.kioskapp.ryan
+package com.kioskapp.ryan.view
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.recyclerview.R
+import com.kioskapp.ryan.model.FoodItem
+import com.kioskapp.ryan.model.FoodItemManager
 
 class CartAdapter(
     private val items: MutableList<FoodItem>,

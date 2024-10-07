@@ -1,4 +1,4 @@
-package com.kioskapp.ryan;
+package com.kioskapp.ryan.view;
 
 import android.Manifest;
 import android.app.NotificationChannel;
@@ -21,6 +21,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.android.example.recyclerview.R;
 import com.android.example.recyclerview.databinding.FragmentDetailBinding;
+import com.kioskapp.ryan.model.FoodItem;
+import com.kioskapp.ryan.model.FoodItemManager;
+import com.kioskapp.ryan.viewModel.FoodItemViewModel;
 
 /** This is Detail Fragment
  * It shows Functionality such as

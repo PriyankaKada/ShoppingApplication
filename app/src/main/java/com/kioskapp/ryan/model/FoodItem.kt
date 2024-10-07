@@ -1,4 +1,4 @@
-package com.kioskapp.ryan
+package com.kioskapp.ryan.model
 
 /**
  * Created by hakim on 3/11/18.

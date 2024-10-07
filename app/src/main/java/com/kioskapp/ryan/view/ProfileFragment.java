@@ -1,4 +1,4 @@
-package com.kioskapp.ryan;
+package com.kioskapp.ryan.view;
 
 import android.Manifest;
 import android.content.pm.PackageManager;

@@ -1,4 +1,4 @@
-package com.kioskapp.ryan;
+package com.kioskapp.ryan.view;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.android.example.recyclerview.R;
 import com.android.example.recyclerview.databinding.FragmentMainBinding;
+import com.kioskapp.ryan.viewModel.FoodItemAdapter;
+import com.kioskapp.ryan.viewModel.FoodItemViewModel;
 
 import java.util.ArrayList;
 

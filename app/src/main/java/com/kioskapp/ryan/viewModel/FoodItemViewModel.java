@@ -1,69 +1,57 @@
-package com.kioskapp.ryan;
+package com.kioskapp.ryan.viewModel;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.android.example.recyclerview.R;
+import com.kioskapp.ryan.model.FoodItem;
+import com.kioskapp.ryan.model.FoodItemManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**This class is Data Manager Class for Cart
- * and favourite Functionality
+/**This is ViewModel Class, It is Lifecycle Aware component used to handle Business Logic
+ * of the application
  * */
-public class FoodItemManager {
+public class FoodItemViewModel extends ViewModel {
+    private final MutableLiveData<List<FoodItem>> foodItemsLiveData;
+    private final List<FoodItem> foodItemsFull;
 
-    private static FoodItemManager instance;
-    private List<FoodItem> favoriteFoodItems;
-    private List<FoodItem> cartFoodItems;
-
-    private FoodItemManager() {
-        favoriteFoodItems = new ArrayList<>();
-        cartFoodItems = new ArrayList<>();
+    public FoodItemViewModel() {
+        foodItemsLiveData = new MutableLiveData<>();
+        foodItemsFull = FoodItemManager.getInstance().loadData(); // Assuming this returns all food items
+        foodItemsLiveData.setValue(new ArrayList<>(foodItemsFull));
     }
 
-    public static FoodItemManager getInstance() {
-        if (instance == null) {
-            instance = new FoodItemManager();
-        }
-        return instance;
+    /**Immutable Live Data used to get List of Food Items
+     * Exposed outside the ViewModel, So no other element is able to update it
+     * */
+
+    public LiveData<List<FoodItem>> getFoodItems() {
+        return foodItemsLiveData;
     }
 
-    public void addToFavorites(FoodItem foodItem) {
-        if (!favoriteFoodItems.contains(foodItem)) {
-            favoriteFoodItems.add(foodItem);
-        }
-    }
+    /**This method simulates  how data coming from API or other sources are prepared to shown on the UI
+     * */
 
-    public void removeFromFavorites(FoodItem foodItem) {
-        favoriteFoodItems.remove(foodItem);
-    }
-
-    public List<FoodItem> getFavoriteFoodItems() {
-        return favoriteFoodItems;
-    }
-
-    public void addToCart(FoodItem foodItem) {
-        if (!cartFoodItems.contains(foodItem)) {
-            cartFoodItems.add(foodItem);
-        }else {
-            cartFoodItems.remove(foodItem);
-            cartFoodItems.add(
-                    new FoodItem(foodItem.getListImage(),
-                            foodItem.getName(),
-                            foodItem.getPrice(),
-                            foodItem.getQuantity()+1,
-                            foodItem.getDescription()));
+    public void filter(String text) {
+        if (text.isEmpty()) {
+            foodItemsLiveData.setValue(new ArrayList<>(foodItemsFull));
+        } else {
+            String filterPattern = text.toLowerCase().trim();
+            List<FoodItem> filteredList = new ArrayList<>();
+            for (FoodItem item : foodItemsFull) {
+                if (item.getName().toLowerCase().contains(filterPattern)) {
+                    filteredList.add(item);
+                }
+            }
+            foodItemsLiveData.setValue(filteredList);
         }
     }
-    public void removeAllFromCart() {
-        cartFoodItems.clear();
-    }
 
-    public void removeFromCart(FoodItem foodItem) {
-        cartFoodItems.remove(foodItem);
-    }
-
-    public List<FoodItem> getCartFoodItems() {
-        return cartFoodItems;
-    }
+    /**This method is used to construct data to be displayed on the screen
+     * */
     public List<FoodItem> loadData() {
         FoodItem foodItem1 = new FoodItem(R.drawable.caesar_salad, "Caesar Salad", 30, 1,
                 "Crisp romaine lettuce, crunchy croutons, and Parmesan cheese, all tossed in a creamy Caesar dressing made with anchovies, garlic, and lemon juice. Visual Cue: Look for a bowl of bright green romaine, golden croutons, and shavings of cheese.");
